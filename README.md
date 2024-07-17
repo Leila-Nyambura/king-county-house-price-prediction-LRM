@@ -24,7 +24,7 @@ Investigate how the size of a house correlates with price. Determine if larger p
 
 Build and evaluate a linear regression model using features bedrooms, bathrooms,sqft_living,grade, condition,sqft_lot,floors, waterfront,yr_built. Provide stakeholders with a predictive tool for estimating housing prices and supporting strategic decision-making in urban development.
 
-## Column Names and descriptions for Kings County Data Set
+## Column Names and Descriptions for Kings County Data Set
 id - unique identifier for the house
 
 date - date the house was sold
@@ -66,5 +66,13 @@ long - longitude coordinate
 sqft_living15 - The square footage of interior housing living space for the nearest 15 neighbors
 
 sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
+
+## Data Analysis
+
+df.corr() # Checked how different independent variables relate to price
+![image](https://github.com/user-attachments/assets/837621c0-c93c-4c8c-b191-635a2bb51a8d)
+
+
+
 
 
