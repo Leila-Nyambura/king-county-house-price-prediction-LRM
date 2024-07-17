@@ -128,7 +128,7 @@ We decided to use all features (except those we initially dropped). Then tested 
 
 Priority features are those that have a strong correlation with the price
 
-## Regression Models
+## Model Creation, Evaluation and Validations
 ### Model 1. Analysis 1
 #### A Simple Linear Regression Model
 
@@ -191,6 +191,8 @@ Mean Squared Error: 18382927868.24515
 Mean Absolute Error: 105886.92896160924
 
 R Squared: 0.5119001571421757
+
+## Recommendations Based On Analysis
 
 
 
