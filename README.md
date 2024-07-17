@@ -105,6 +105,18 @@ sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 
 ![image](https://github.com/user-attachments/assets/b0667df3-7e19-434c-8c6a-b00296159980)
 
+### Checking for Outliers
+![image](https://github.com/user-attachments/assets/9c22c28d-bb2c-40d8-bf77-a928d44338b8)
+
+Features Used: 'price', 'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors',
+       'has_waterfront', 'condition', 'grade', 'is_renovated', 'age'
+
+We decided to use all features (except those we initially dropped). Then tested the features practically to create the most accurate model, leveraging on the information from the correlation matrix. 
+Priority features will be those that have a strong correlation with the price
+
+
+
+
 
 
 
