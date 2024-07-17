@@ -83,7 +83,6 @@ sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 
 ![image](https://github.com/user-attachments/assets/749d3795-6498-4cf9-baa0-110a9655d494)
 
-As the square footage of the living area increases, the price of the house also tends to increase.
 
 ### Impact of the quality of construction and design of a house(grade) on the price of the house
 ![image](https://github.com/user-attachments/assets/4c98a8ec-8fd8-407c-8b60-759a517078c8)
