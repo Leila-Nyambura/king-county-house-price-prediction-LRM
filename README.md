@@ -22,15 +22,15 @@ date - date the house was sold
 
 price - is prediction target
 
-bedroomsNumber - number of bedrooms
+bedrooms - number of bedrooms
 
-bathroomsNumber - number of bathrooms
+bathrooms - number of bathrooms
 
 sqft_livingsquare - square footage of the home
 
 sqft_lotsquare - square footage of the lot
 
-floorsTotal - number of floors in the house
+floors - number of floors in the house
 
 waterfront - does the house have waterfront view?
 
