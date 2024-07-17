@@ -145,7 +145,9 @@ Placing the values of the intercept and coefficient, the formula can be expresse
 y = 158956.01 + 158.97582529 * sqft_living
 
 Mean Squared Error: 26794030405.61377
+
 Mean Absolute Error: 132359.40113636138
+
 R Squared: 0.2885702362408118
 
 ### Model 2. Analysis 2
@@ -164,7 +166,9 @@ Placing the values of the intercept and coefficient, the formula can be expresse
 y = -282120.28743130196 + 125.07886488 * sqft_living + 84968.00110316 * grade - 24309.70689454 * bathrooms - 19933.8569196 * bedrooms - 8018.75276854 * floors
 
 Mean Squared Error: 24145228284.901585
+
 Mean Absolute Error: 123442.51743868375
+
 R Squared: 0.35890070308197386
 
 ### Model 3. Analysis 3
@@ -183,7 +187,9 @@ Placing the values of the intercept and coefficient, the formula can be expresse
 y = -282120.28743130196 + 125.07886488 * sqft_living + 84968.00110316 * grade - 24309.70689454 * bathrooms - 19933.8569196 * bedrooms - 8018.75276854 * floors
 
 Mean Squared Error: 18382927868.24515
+
 Mean Absolute Error: 105886.92896160924
+
 R Squared: 0.5119001571421757
 
 
