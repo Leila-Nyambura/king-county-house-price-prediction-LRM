@@ -13,18 +13,28 @@ This project utilizes the King County House Sales dataset, which is available in
 The real estate market is a dynamic and complex field influenced by numerous factors that affect property values. Predicting house prices accurately is crucial for buyers, sellers, real estate agents, and investors to make informed decisions. This project aims to develop a linear regression model to predict house prices using a variety of independent variables, including physical attributes of the properties, location-based features, and other relevant factors. By leveraging data analysis and machine learning techniques, this project seeks to provide a robust tool for estimating property values, thereby enhancing decision-making processes in the real estate sector.
 
 ## Problem Statement
-Accurately predicting house prices is a significant challenge due to the multitude of variables that can influence property values. Traditional methods often fail to capture the complexity and interactions between different factors, leading to less reliable predictions. This project addresses the problem of developing a reliable and accurate predictive model for house prices using linear regression, incorporating a comprehensive set of independent variables to improve prediction accuracy.
+Homeowners and real estate agents often face the challenge of accurately predicting home values and identifying which renovations will yield the highest return on investment. Inaccurate valuations can affect home sales and lead to significant losses for both buyers and sellers. Uninformed renovation decisions can result in unnecessary expenditures without a corresponding increase in property value. For a real estate agency that helps homeowners buy and sell homes, providing accurate home valuations and precise advice on effective renovations is crucial. Traditional methods often fail to capture the complexity and interactions between different factors, leading to less reliable predictions. This project addresses the problem of developing a reliable and accurate predictive model for house prices using linear regression, incorporating a comprehensive set of independent variables to improve prediction accuracy.
 
 ## Objectives
+1. Develop a model that accurately predicts the value of a house based on its features.
 
-Explore the Relationship Between Property Size and Housing Prices:
-Investigate how the size of a house correlates with price. Determine if larger properties command higher prices, aiding real estate investors in valuation strategies.
+   Investigate the most important features in homes to create an accurate model for 
+   estimating home value.
+   
+3. Explore and quantify the relationship between renovations and property value and refine 
+   the model based on the results.
 
-## Develop a Linear Regression Model to Predict Housing Prices:
+   Determine whether renovations affect home prices. If a relationship exists, quantify it and 
+   refine the model to improve accuracy.
+ 
+4. Offer tailored recommendations to homeowners based on their property characteristics and market conditions.
 
-Build and evaluate a linear regression model using features bedrooms, bathrooms,sqft_living,grade, condition,sqft_lot,floors, waterfront,yr_built. Provide stakeholders with a predictive tool for estimating housing prices and supporting strategic decision-making in urban development.
+   Provide homeowners with accurate property valuations and advise on whether renovations would 
+   be a worthwhile investment if they intend to sell.
 
-## Column Names and Descriptions for Kings County Data Set
+## Data Understanding
+
+#### Column Names and Descriptions for Kings County Data Set
 id - unique identifier for the house
 
 date - date the house was sold
@@ -118,8 +128,18 @@ We decided to use all features (except those we initially dropped). Then tested 
 
 Priority features being those that have a strong correlation with the price
 
+## Regression Models
+### Model 1. Analysis 1
+#### A Simple Linear Regression Model
 
+Simple Linear Regression Formula
+The formula for predicting the price (y) can be expressed as: y = β0 + β1 * sqft_living Where:
 
+β0 is the intercept
+β1 is the coefficient for sqft_living
+Placing the values of the intercept and coefficient, the formula can be expressed as:
+
+y = 158956.01 + 158.97582529 * sqft_living
 
 
 
