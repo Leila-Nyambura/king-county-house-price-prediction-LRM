@@ -14,3 +14,46 @@ Investigate how the size of a house correlates with price. Determine if larger p
 
 ## Develop a Linear Regression Model to Predict Housing Prices:
 Build and evaluate a linear regression model using features bedrooms, bathrooms,sqft_living,grade, condition,sqft_lot,floors, waterfront,yr_built. Provide stakeholders with a predictive tool for estimating housing prices and supporting strategic decision-making in urban development.
+
+# Column Names and descriptions for Kings County Data Set
+id - unique identifier for the house
+
+date - date the house was sold
+
+price - is prediction target
+
+bedroomsNumber - number of bedrooms
+
+bathroomsNumber - number of bathrooms
+
+sqft_livingsquare - square footage of the home
+
+sqft_lotsquare - square footage of the lot
+
+floorsTotal - number of floors in the house
+
+waterfront - does the house have waterfront view?
+
+view - has the house been viewed?
+
+condition - How good is the overall condition is of the house?
+
+grade - overall grade given to the housing unit, based on King County grading system
+
+sqft_above - square footage of house apart from basement
+
+sqft_basement - square footage of the basement
+
+yr_built - year house was built
+
+yr_renovated - year when house was renovated
+
+zipcode - area zip code
+
+lat - latitude coordinate
+
+long - longitude coordinate
+
+sqft_living15 - The square footage of interior housing living space for the nearest 15 neighbors
+
+sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
