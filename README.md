@@ -116,7 +116,7 @@ Features Used: 'price', 'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'flo
 We decided to use all features (except those we initially dropped). Then tested the features practically to create the most accurate model, leveraging on the information from the correlation matrix. 
 
 
-Priority features will be those that have a strong correlation with the price
+Priority features being those that have a strong correlation with the price
 
 
 
