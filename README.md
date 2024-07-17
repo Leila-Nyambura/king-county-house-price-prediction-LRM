@@ -71,7 +71,6 @@ sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 
 ## Checking the correlation between the independent variables to the price(our target variable)
 
-df.corr() 
 ![image](https://github.com/user-attachments/assets/837621c0-c93c-4c8c-b191-635a2bb51a8d)
 
 ![image](https://github.com/user-attachments/assets/b0667df3-7e19-434c-8c6a-b00296159980)
