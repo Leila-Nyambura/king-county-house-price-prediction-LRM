@@ -126,13 +126,16 @@ Features Used: 'price', 'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'flo
 We decided to use all features (except those we initially dropped). Then tested the features practically to create the most accurate model, leveraging on the information from the correlation matrix. 
 
 
-Priority features being those that have a strong correlation with the price
+Priority features are those that have a strong correlation with the price
 
 ## Regression Models
 ### Model 1. Analysis 1
 #### A Simple Linear Regression Model
 
 Simple Linear Regression Formula
+
+The feature used for this model is 'sqft_living' and the predictor variable, 'price'
+
 The formula for predicting the price (y) can be expressed as: y = β0 + β1 * sqft_living Where:
 
 β0 is the intercept
@@ -141,7 +144,47 @@ Placing the values of the intercept and coefficient, the formula can be expresse
 
 y = 158956.01 + 158.97582529 * sqft_living
 
+Mean Squared Error: 26794030405.61377
+Mean Absolute Error: 132359.40113636138
+R Squared: 0.2885702362408118
 
+### Model 2. Analysis 2
+
+#### Multiple Linear Regression Model
+Using the top 5 features i.e 'sqft_living', 'grade', 'bathrooms', 'bedrooms', 'floors'
+
+The formula for predicting the price (y) can be expressed as: y = β0 + β1 * sqft_living + β2 * grade + β3 * bathrooms + β4 * bedrooms + β5 * floors
+
+Where:
+
+β0 is the intercept
+β1, β2, ..., β5 are the coefficients for each feature
+Placing the values of the intercept and coefficient, the formula can be expressed as:
+
+y = -282120.28743130196 + 125.07886488 * sqft_living + 84968.00110316 * grade - 24309.70689454 * bathrooms - 19933.8569196 * bedrooms - 8018.75276854 * floors
+
+Mean Squared Error: 24145228284.901585
+Mean Absolute Error: 123442.51743868375
+R Squared: 0.35890070308197386
+
+### Model 3. Analysis 3
+
+#### Multiple Linear Regression Model
+Using all features
+
+The formula for predicting the price (y) can be expressed as: y = β0 + β1 * sqft_living + β2 * grade + β3 * bathrooms + β4 * bedrooms + β5 * floors
+
+Where:
+
+β0 is the intercept
+β1, β2, ..., β5 are the coefficients for each feature
+Placing the values of the intercept and coefficient, the formula can be expressed as:
+
+y = -282120.28743130196 + 125.07886488 * sqft_living + 84968.00110316 * grade - 24309.70689454 * bathrooms - 19933.8569196 * bedrooms - 8018.75276854 * floors
+
+Mean Squared Error: 18382927868.24515
+Mean Absolute Error: 105886.92896160924
+R Squared: 0.5119001571421757
 
 
 
