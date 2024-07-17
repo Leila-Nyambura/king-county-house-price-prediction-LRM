@@ -69,15 +69,30 @@ sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 
 ## Data Analysis
 
-## Checking the correlation between the independent variables to the price(our target variable)
+### Checking the correlation between the independent variables to the price(our target variable)
 
 ![image](https://github.com/user-attachments/assets/837621c0-c93c-4c8c-b191-635a2bb51a8d)
 
 ![image](https://github.com/user-attachments/assets/b0667df3-7e19-434c-8c6a-b00296159980)
 
-## Visualizing the dataset using a pairplot to explore correlations and distributions
+### Visualizing the dataset using a pairplot to explore correlations and distributions
 
 ![image](https://github.com/user-attachments/assets/81bb2769-2e2e-4db9-bcac-055687f9e34a)
+
+### Checking how the size of the house compares to its price
+
+![image](https://github.com/user-attachments/assets/749d3795-6498-4cf9-baa0-110a9655d494)
+
+As the square footage of the living area increases, the price of the house also tends to increase.
+
+### Impact of the quality of construction and design of a house(grade) on the price of the house
+![image](https://github.com/user-attachments/assets/4c98a8ec-8fd8-407c-8b60-759a517078c8)
+
+## Feature Selection
+
+
+
+
 
 
 
