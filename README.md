@@ -67,17 +67,19 @@ sqft_living15 - The square footage of interior housing living space for the near
 
 sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 
+### Columns dropped:
+- date
+- view
+- sqft_above
+- sqft_basement
+- yr_renovated
+- zipcode
+- lat
+- long
+- sqft_living15
+- sqft_lot15
+
 ## Data Analysis and Visualizations
-
-#### Checking the correlation between the independent variables to the price(our target variable)
-
-![image](https://github.com/user-attachments/assets/837621c0-c93c-4c8c-b191-635a2bb51a8d)
-
-![image](https://github.com/user-attachments/assets/b0667df3-7e19-434c-8c6a-b00296159980)
-
-#### Visualizing the dataset using a pairplot to explore correlations and distributions
-
-![image](https://github.com/user-attachments/assets/81bb2769-2e2e-4db9-bcac-055687f9e34a)
 
 #### Checking how the size of the house compares to its price
 
@@ -88,6 +90,25 @@ sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 ![image](https://github.com/user-attachments/assets/4c98a8ec-8fd8-407c-8b60-759a517078c8)
 
 ## Feature Selection
+
+#### Visualizing the dataset using a pairplot to explore correlations and distributions
+
+![image](https://github.com/user-attachments/assets/81bb2769-2e2e-4db9-bcac-055687f9e34a)
+
+
+### Visualizing the correlation using a heatmap
+![image](https://github.com/user-attachments/assets/8ed535ac-e0ad-43eb-aa54-95641be8b5b9)
+
+#### Checking the correlation between the independent variables to the price(our target variable)
+
+![image](https://github.com/user-attachments/assets/837621c0-c93c-4c8c-b191-635a2bb51a8d)
+
+![image](https://github.com/user-attachments/assets/b0667df3-7e19-434c-8c6a-b00296159980)
+
+
+
+
+
 
 
 
