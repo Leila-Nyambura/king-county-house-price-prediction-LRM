@@ -105,7 +105,7 @@ sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 
 ![image](https://github.com/user-attachments/assets/b0667df3-7e19-434c-8c6a-b00296159980)
 
-### Checking for Outliers
+#### Checking for Outliers
 ![image](https://github.com/user-attachments/assets/9c22c28d-bb2c-40d8-bf77-a928d44338b8)
 
 Features Used: 'price', 'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors',
