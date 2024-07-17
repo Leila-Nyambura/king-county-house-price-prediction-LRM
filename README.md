@@ -67,7 +67,7 @@ sqft_living15 - The square footage of interior housing living space for the near
 
 sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 
-## Data Analysis
+## Data Analysis and Visualizations
 
 ### Checking the correlation between the independent variables to the price(our target variable)
 
