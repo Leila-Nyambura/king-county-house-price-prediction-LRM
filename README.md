@@ -15,7 +15,7 @@ Investigate how the size of a house correlates with price. Determine if larger p
 ## Develop a Linear Regression Model to Predict Housing Prices:
 Build and evaluate a linear regression model using features bedrooms, bathrooms,sqft_living,grade, condition,sqft_lot,floors, waterfront,yr_built. Provide stakeholders with a predictive tool for estimating housing prices and supporting strategic decision-making in urban development.
 
-# Column Names and descriptions for Kings County Data Set
+## Column Names and descriptions for Kings County Data Set
 id - unique identifier for the house
 
 date - date the house was sold
