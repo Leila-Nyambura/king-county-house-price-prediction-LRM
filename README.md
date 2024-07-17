@@ -2,12 +2,12 @@
 
 # King County House Price Prediction using Linear Regression Model
 
-# Project Overview
+## Project Overview
 
-# Data Source
+## Data Source
 This project utilizes the King County House Sales dataset, which is available in `kc_house_data.csv` located in the `data` folder of this repository.
 
-# Business Understanding
+## Business Understanding
 
 ## Introduction
 The real estate market is a dynamic and complex field influenced by numerous factors that affect property values. Predicting house prices accurately is crucial for buyers, sellers, real estate agents, and investors to make informed decisions. This project aims to develop a linear regression model to predict house prices using a variety of independent variables, including physical attributes of the properties, location-based features, and other relevant factors. By leveraging data analysis and machine learning techniques, this project seeks to provide a robust tool for estimating property values, thereby enhancing decision-making processes in the real estate sector.
