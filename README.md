@@ -1,21 +1,30 @@
 # Project 2 (Group Work)
 
-# BUSINESS UNDERSTANDING
-## Introduction
+# King County House Price Prediction using Linear Regression Model
 
+## Project Overview
+
+## Data Source
+This project utilizes the King County House Sales dataset, which is available in `kc_house_data.csv` located in the `data` folder of this repository.
+
+## Business Understanding
+
+## Introduction
 The real estate market is a dynamic and complex field influenced by numerous factors that affect property values. Predicting house prices accurately is crucial for buyers, sellers, real estate agents, and investors to make informed decisions. This project aims to develop a linear regression model to predict house prices using a variety of independent variables, including physical attributes of the properties, location-based features, and other relevant factors. By leveraging data analysis and machine learning techniques, this project seeks to provide a robust tool for estimating property values, thereby enhancing decision-making processes in the real estate sector.
 
 ## Problem Statement
-Accurately predicting house prices is a significant challenge due to the multitude of variables that can influence property values. Traditional methods often fail to capture the complexity and interactions between different factors, leading to unreliable predictions. This project addresses the problem of developing a reliable and accurate predictive model for house prices using linear regression, incorporating a comprehensive set of independent variables to improve prediction accuracy.
+Accurately predicting house prices is a significant challenge due to the multitude of variables that can influence property values. Traditional methods often fail to capture the complexity and interactions between different factors, leading to less reliable predictions. This project addresses the problem of developing a reliable and accurate predictive model for house prices using linear regression, incorporating a comprehensive set of independent variables to improve prediction accuracy.
 
 ## Objectives
+
 Explore the Relationship Between Property Size and Housing Prices:
 Investigate how the size of a house correlates with price. Determine if larger properties command higher prices, aiding real estate investors in valuation strategies.
 
 ## Develop a Linear Regression Model to Predict Housing Prices:
+
 Build and evaluate a linear regression model using features bedrooms, bathrooms,sqft_living,grade, condition,sqft_lot,floors, waterfront,yr_built. Provide stakeholders with a predictive tool for estimating housing prices and supporting strategic decision-making in urban development.
 
-## Column Names and descriptions for Kings County Data Set
+## Column Names and Descriptions for Kings County Data Set
 id - unique identifier for the house
 
 date - date the house was sold
@@ -57,3 +66,35 @@ long - longitude coordinate
 sqft_living15 - The square footage of interior housing living space for the nearest 15 neighbors
 
 sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
+
+## Data Analysis
+
+### Checking the correlation between the independent variables to the price(our target variable)
+
+![image](https://github.com/user-attachments/assets/837621c0-c93c-4c8c-b191-635a2bb51a8d)
+
+![image](https://github.com/user-attachments/assets/b0667df3-7e19-434c-8c6a-b00296159980)
+
+### Visualizing the dataset using a pairplot to explore correlations and distributions
+
+![image](https://github.com/user-attachments/assets/81bb2769-2e2e-4db9-bcac-055687f9e34a)
+
+### Checking how the size of the house compares to its price
+
+![image](https://github.com/user-attachments/assets/749d3795-6498-4cf9-baa0-110a9655d494)
+
+
+### Impact of the quality of construction and design of a house(grade) on the price of the house
+![image](https://github.com/user-attachments/assets/4c98a8ec-8fd8-407c-8b60-759a517078c8)
+
+## Feature Selection
+
+
+
+
+
+
+
+
+
+
