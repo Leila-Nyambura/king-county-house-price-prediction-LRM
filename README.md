@@ -262,10 +262,10 @@ Mode Price Difference: $200,000.00
 
 Houses that have undergone renovations have a higher mean price by approximately $110,000 and a higher mode price by $200,000 compared to houses without renovations. This indicates that, on average, renovated houses sell for higher prices. However, this comparison does not account for other differences between the houses.
 
-Analysis 3: Tailored Recommendations
+## Recommendations
 Based on the findings from our predictive model and statistical analysis, we can offer the following tailored recommendations to homeowners:
 
-Recommendations for Homeowners Willing to Sell
+### Recommendations for Homeowners Willing to Sell
 Homeowners planning to sell their houses should consider undertaking renovations, particularly if the cost of these renovations does not exceed $7,500. Our analysis indicates that renovations can increase the value of a home by approximately $7,500. Therefore, if the renovation costs are kept within this limit, homeowners are likely to see a positive return on investment.
 
 Recommendations for Homeowners Looking to Enhance Property Value
