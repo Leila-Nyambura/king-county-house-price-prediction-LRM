@@ -144,53 +144,130 @@ Placing the values of the intercept and coefficient, the formula can be expresse
 
 y = 158956.01 + 158.97582529 * sqft_living
 
-Mean Squared Error: 26794030405.61377
 
-Mean Absolute Error: 132359.40113636138
+Mean Squared Error: 26997058887.541637
 
-R Squared: 0.2885702362408118
+Mean Absolute Error: 132831.78109333402
+
+R Squared: 0.35426536920193596
+
+
+Explanation:
+Intercept (142832.55): This is the estimated price when the square footage of the living space is zero. It serves as the baseline price of a house without considering its size.
+Coefficient (169.59): This represents the increase in price for each additional square foot of living space. For every extra square foot, the price is predicted to increase by approximately 169.59 units of currency.
+Performance Interpretation:
+The MSE value of 26,997,058,887.54 indicates that there is a significant average squared error between the actual and predicted prices. This suggests that there is room for improvement in the model.
+The MAE value of 132,831.78 tells us that, on average, our model's predictions are off by about 132,831.78 units of currency.
+The R² value of 0.35 means that 35% of the variability in house prices is accounted for by the model based on square footage alone. This indicates a moderate level of explanatory power, but it also suggests that other factors not included in this model are influencing house prices.
+In summary, while this simple linear regression model provides a basic understanding of how house prices vary with the size of the living area, its performance metrics indicate that it may not be sufficiently accurate for precise predictions. Including additional features could potentially improve the model's accuracy.
+
 
 ### Model 2. Analysis 2
 
-#### Multiple Linear Regression Model
-Using the top 5 features i.e 'sqft_living', 'grade', 'bathrooms', 'bedrooms', 'floors'
+To improve the performance of our model, we shall add other key features in our simple model and evaluate its performance
 
-The formula for predicting the price (y) can be expressed as: y = β0 + β1 * sqft_living + β2 * grade + β3 * bathrooms + β4 * bedrooms + β5 * floors
+#### Multiple Linear Regression Model
+
+Using the top 5 features i.e 'sqft_living', 'grade', 'bathrooms', 'bedrooms', 'floors'
+The formula for predicting the price (y) can be expressed as:
+
+y = β0 + β1 * sqft_living + β2 * grade + β3 * bathrooms + β4 * bedrooms + β5 * floors
 
 Where:
 
 β0 is the intercept
 β1, β2, ..., β5 are the coefficients for each feature
-Placing the values of the intercept and coefficient, the formula can be expressed as:
+Placing the values of the intercept and coefficients, the formula can be expressed as:
 
-y = -282120.28743130196 + 125.07886488 * sqft_living + 84968.00110316 * grade - 24309.70689454 * bathrooms - 19933.8569196 * bedrooms - 8018.75276854 * floors
+y = -271416.9668649424 + 118.81604097 * sqft_living + 80470.38579525 * grade + -18220.19031844 * bathrooms + -12892.82031154 * bedrooms + -7053.33250738 * floors
 
-Mean Squared Error: 24145228284.901585
+Where:
 
-Mean Absolute Error: 123442.51743868375
+-271416.9668649424 is the intercept
+118.81604097 is the coefficient for sqft_living
+80470.38579525 is the coefficient for grade
+-18220.19031844 is the coefficient for bathrooms
+-12892.82031154 is the coefficient for bedrooms
+-7053.33250738 is the coefficient for floors
 
-R Squared: 0.35890070308197386
+Mean Squared Error of Model:  23757545024.29692
+Mean Absolute Error of Model: 122306.04934670829
+R Squared Value of Model: 0.43175033884849523
+
+Explanation:
+Intercept (-271416.97): This is the estimated price when all the predictors (sqft_living, grade, bathrooms, bedrooms, floors) are zero. It serves as the baseline price of a house without considering these features.
+
+Coefficients:
+118.82 for sqft_living: For each additional square foot of living space, the price is predicted to increase by approximately 118.82 units of currency.
+80470.39 for grade: For each unit increase in grade, the price is predicted to increase by approximately 80470.39 units of currency.
+-18220.19 for bathrooms: For each additional bathroom, the price is predicted to decrease by approximately 18220.19 units of currency.
+-12892.82 for bedrooms: For each additional bedroom, the price is predicted to decrease by approximately 12892.82 units of currency.
+-7053.33 for floors: For each additional floor, the price is predicted to decrease by approximately 7053.33 units of currency.
+
+Performance Interpretation:
+The MSE value of 23,757,545,024.30 indicates a significant average squared error between the actual and predicted prices, though it is slightly lower than the simple linear regression model, suggesting a better fit.
+The MAE value of 122,306.05 tells us that, on average, our model's predictions are off by about 122,306.05 units of currency.
+The R² value of 0.43 means that 43% of the variability in house prices is accounted for by the model based on the features included. This indicates an improvement over the simple linear regression model and suggests that including multiple features provides a better explanation of house prices.
+
+In summary, this multiple linear regression model provides a more comprehensive understanding of how various features influence house prices compared to the simple linear regression model. However, the performance metrics indicate that there is still room for improvement, and incorporating additional relevant features might further enhance the model's accuracy
+
+
 
 ### Model 3. Analysis 3
 
 #### Multiple Linear Regression Model
 Using all features
+The formula for predicting the price (y) can be expressed as:
 
-The formula for predicting the price (y) can be expressed as: y = β0 + β1 * sqft_living + β2 * grade + β3 * bathrooms + β4 * bedrooms + β5 * floors
+y = β0 + β1 * sqft_living + β2 * grade + β3 * bathrooms + β4 * bedrooms + β5 * floors + β6 * has_waterfront + β7 * is_renovated + β8 * sqft_lot + β9 * condition + β10 * age
 
 Where:
 
 β0 is the intercept
-β1, β2, ..., β5 are the coefficients for each feature
-Placing the values of the intercept and coefficient, the formula can be expressed as:
+β1, β2, ..., β10 are the coefficients for each feature
+Placing the values of the intercept and coefficients, the formula can be expressed as:
 
-y = -282120.28743130196 + 125.07886488 * sqft_living + 84968.00110316 * grade - 24309.70689454 * bathrooms - 19933.8569196 * bedrooms - 8018.75276854 * floors
+y = -722928.656182566 + 110.32036 * sqft_living + 105666.687 * grade + 25011.2847 * bathrooms + -15618.9331 * bedrooms + 16338.1883 * floors + 278527.067 * has_waterfront + 7347.24504 * is_renovated + -7.35820112 * sqft_lot + 21879.1947 * condition + 2690.50331 * age
 
-Mean Squared Error: 18382927868.24515
+Where:
 
-Mean Absolute Error: 105886.92896160924
+-722928.656182566 is the intercept
+110.32036 is the coefficient for sqft_living
+105666.687 is the coefficient for grade
+25011.2847 is the coefficient for bathrooms
+-15618.9331 is the coefficient for bedrooms
+16338.1883 is the coefficient for floors
+278527.067 is the coefficient for has_waterfront
+7347.24504 is the coefficient for is_renovated
+-7.35820112 is the coefficient for sqft_lot
+21879.1947 is the coefficient for condition
+2690.50331 is the coefficient for age
 
-R Squared: 0.5119001571421757
+Mean Squared Error of Model:  18203549025.413246
+Mean Absolute Error of Model: 105665.88359227464
+R Squared Value of Model: 0.5645947190727462
+
+Explanation:
+Intercept (-722928.66): This is the estimated price when all the predictors are zero. It provides a baseline price of a house without considering these features.
+
+Coefficients:
+110.32 for sqft_living: For each additional square foot of living space, the price is predicted to increase by approximately 110.32 units of currency.
+105666.69 for grade: For each unit increase in grade, the price is predicted to increase by approximately 105666.69 units of currency.
+25011.28 for bathrooms: For each additional bathroom, the price is predicted to increase by approximately 25011.28 units of currency.
+-15618.93 for bedrooms: For each additional bedroom, the price is predicted to decrease by approximately 15618.93 units of currency.
+16338.19 for floors: For each additional floor, the price is predicted to increase by approximately 16338.19 units of currency.
+278527.07 for has_waterfront: Properties with waterfronts are predicted to be valued higher by approximately 278527.07 units of currency.
+7347.25 for is_renovated: Renovated properties are predicted to be valued higher by approximately 7347.25 units of currency.
+-7.36 for sqft_lot: Each additional square foot of lot size is predicted to decrease the price by approximately 7.36 units of currency.
+21879.19 for condition: For each unit increase in condition rating, the price is predicted to increase by approximately 21879.19 units of currency.
+2690.50 for age: For each year increase in the age of the property, the price is predicted to increase by approximately 2690.50 units of currency.
+
+#### Advantages of This Model:
+Higher R² Value: With an R² value of 0.56, this model explains a significant portion of the variance in house prices, making it more reliable than the previous models.
+Lower Errors: Both the MSE and MAE are lower in this model compared to previous ones, indicating more accurate and reliable predictions.
+Comprehensive Features: By including multiple relevant features, this model provides a more detailed and nuanced understanding of how different factors affect house prices, leading to better-informed decisions for stakeholders.
+In summary, this final multiple linear regression model offers improved predictive accuracy and reliability by incorporating a broader range of features. This makes it a valuable tool for predicting house prices and making informed real estate decisions.
+
 
 ## Recommendations Based On Analysis
 
@@ -213,8 +290,24 @@ According to our predictive model, renovation of a home improves its value by ap
 This shows that renovated houses have better sale prices on average.
 
 ## Conclusions
+Objective 1:
+Explore the Relationship Between Property Size and Housing Prices Conclusion:
+
+Findings: The analysis reveals a strong positive correlation (r = 0.701917) between sqft_living (measured by footage of a house) and housing prices (price). Larger houses in terms of sqft_living tend to command higher prices. Implications: This correlation suggests that property size significantly influences housing prices, guiding decisions for real estate investors and homebuyers regarding property valuation and market positioning.
+
+Findings: The analysis reveals a strong positive correlation (r = 0.695) between property size (measured by average number of rooms, RM) and housing prices (MEDV). Larger properties tend to command higher prices in the Boston housing market.
+Implications: This correlation suggests that property size significantly influences housing prices, guiding decisions for real estate investors and homebuyers regarding property valuation and market position
 
 
+Objective 2:
+Develop a Linear Regression Model to Predict Housing Prices Conclusion:
+
+Findings: The linear regression model, incorporating features bedrooms,bathrooms,sqft_living,grade,condition,sqft_lot,floors,waterfront,yr_built achieves an R-squared (R2) score of 0.51 on the test set. This indicates that 51% of the variance in housing prices (price) can be explained by these predictors. Implications: Stakeholders can utilize this model for predicting housing prices based on property characteristics. It supports informed decision-making in real estate investments, pricing strategies, and urban development planning.
+
+Conclusion:
+
+Findings: The analysis reveals a strong positive correlation (r = 0.695) between property size (measured by average number of rooms, RM) and housing prices (MEDV). Larger properties tend to command higher prices in the Boston housing market.
+Implications: This correlation suggests that property size significantly influences housing prices, guiding decisions for real estate investors and homebuyers regarding property valuation and market position
 
 
 
