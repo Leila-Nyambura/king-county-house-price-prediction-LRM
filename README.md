@@ -154,7 +154,9 @@ R Squared: 0.35426536920193596
 
 Explanation:
 Intercept (142832.55): This is the estimated price when the square footage of the living space is zero. It serves as the baseline price of a house without considering its size.
+
 Coefficient (169.59): This represents the increase in price for each additional square foot of living space. For every extra square foot, the price is predicted to increase by approximately 169.59 units of currency.
+
 Performance Interpretation:
 The MSE value of 26,997,058,887.54 indicates that there is a significant average squared error between the actual and predicted prices. This suggests that there is room for improvement in the model.
 The MAE value of 132,831.78 tells us that, on average, our model's predictions are off by about 132,831.78 units of currency.
@@ -181,28 +183,12 @@ Placing the values of the intercept and coefficients, the formula can be express
 
 y = -271416.9668649424 + 118.81604097 * sqft_living + 80470.38579525 * grade + -18220.19031844 * bathrooms + -12892.82031154 * bedrooms + -7053.33250738 * floors
 
-Where:
-
--271416.9668649424 is the intercept
-118.81604097 is the coefficient for sqft_living
-80470.38579525 is the coefficient for grade
--18220.19031844 is the coefficient for bathrooms
--12892.82031154 is the coefficient for bedrooms
--7053.33250738 is the coefficient for floors
-
 Mean Squared Error of Model:  23757545024.29692
 Mean Absolute Error of Model: 122306.04934670829
 R Squared Value of Model: 0.43175033884849523
 
 Explanation:
 Intercept (-271416.97): This is the estimated price when all the predictors (sqft_living, grade, bathrooms, bedrooms, floors) are zero. It serves as the baseline price of a house without considering these features.
-
-Coefficients:
-118.82 for sqft_living: For each additional square foot of living space, the price is predicted to increase by approximately 118.82 units of currency.
-80470.39 for grade: For each unit increase in grade, the price is predicted to increase by approximately 80470.39 units of currency.
--18220.19 for bathrooms: For each additional bathroom, the price is predicted to decrease by approximately 18220.19 units of currency.
--12892.82 for bedrooms: For each additional bedroom, the price is predicted to decrease by approximately 12892.82 units of currency.
--7053.33 for floors: For each additional floor, the price is predicted to decrease by approximately 7053.33 units of currency.
 
 Performance Interpretation:
 The MSE value of 23,757,545,024.30 indicates a significant average squared error between the actual and predicted prices, though it is slightly lower than the simple linear regression model, suggesting a better fit.
@@ -229,38 +215,12 @@ Placing the values of the intercept and coefficients, the formula can be express
 
 y = -722928.656182566 + 110.32036 * sqft_living + 105666.687 * grade + 25011.2847 * bathrooms + -15618.9331 * bedrooms + 16338.1883 * floors + 278527.067 * has_waterfront + 7347.24504 * is_renovated + -7.35820112 * sqft_lot + 21879.1947 * condition + 2690.50331 * age
 
-Where:
-
--722928.656182566 is the intercept
-110.32036 is the coefficient for sqft_living
-105666.687 is the coefficient for grade
-25011.2847 is the coefficient for bathrooms
--15618.9331 is the coefficient for bedrooms
-16338.1883 is the coefficient for floors
-278527.067 is the coefficient for has_waterfront
-7347.24504 is the coefficient for is_renovated
--7.35820112 is the coefficient for sqft_lot
-21879.1947 is the coefficient for condition
-2690.50331 is the coefficient for age
-
 Mean Squared Error of Model:  18203549025.413246
 Mean Absolute Error of Model: 105665.88359227464
 R Squared Value of Model: 0.5645947190727462
 
 Explanation:
 Intercept (-722928.66): This is the estimated price when all the predictors are zero. It provides a baseline price of a house without considering these features.
-
-Coefficients:
-110.32 for sqft_living: For each additional square foot of living space, the price is predicted to increase by approximately 110.32 units of currency.
-105666.69 for grade: For each unit increase in grade, the price is predicted to increase by approximately 105666.69 units of currency.
-25011.28 for bathrooms: For each additional bathroom, the price is predicted to increase by approximately 25011.28 units of currency.
--15618.93 for bedrooms: For each additional bedroom, the price is predicted to decrease by approximately 15618.93 units of currency.
-16338.19 for floors: For each additional floor, the price is predicted to increase by approximately 16338.19 units of currency.
-278527.07 for has_waterfront: Properties with waterfronts are predicted to be valued higher by approximately 278527.07 units of currency.
-7347.25 for is_renovated: Renovated properties are predicted to be valued higher by approximately 7347.25 units of currency.
--7.36 for sqft_lot: Each additional square foot of lot size is predicted to decrease the price by approximately 7.36 units of currency.
-21879.19 for condition: For each unit increase in condition rating, the price is predicted to increase by approximately 21879.19 units of currency.
-2690.50 for age: For each year increase in the age of the property, the price is predicted to increase by approximately 2690.50 units of currency.
 
 #### Advantages of This Model:
 Higher R² Value: With an R² value of 0.56, this model explains a significant portion of the variance in house prices, making it more reliable than the previous models.
