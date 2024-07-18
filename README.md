@@ -197,7 +197,8 @@ R Squared: 0.5119001571421757
 ### Relationship Between Analysis and Property Value
 Determining whether renovations affect home prices and to what extent.
 
-Compapring using measures of central tendency
+Comparing using measures of central tendency
+
 ![image](https://github.com/user-attachments/assets/ecd2b2f5-734b-46de-b6c7-bdfb3cc3fcff)
 
 #### Explanation
