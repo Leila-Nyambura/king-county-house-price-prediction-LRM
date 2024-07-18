@@ -311,7 +311,7 @@ Quantified Renovation Impact:
 
 We explored and quantified the relationship between renovations and property value. Our analysis shows that renovated houses have higher mean and mode prices compared to non-renovated houses. Additionally, our predictive model indicates that renovations contribute to an increase in home value by approximately $7,500, highlighting the financial benefits of investing in renovations.
 
-Tailored Recommendations: 
+## Recommendations 
 
 Based on our findings, we can offer tailored recommendations to homeowners. Homeowners can be provided with accurate property valuations and advised on effective renovations to enhance their property value. This ensures that renovation decisions are informed and strategic, leading to better financial outcomes.
 
