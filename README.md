@@ -299,25 +299,6 @@ We can therefore conclude that renovations impact the valuation of a home positi
 According to our predictive model, renovation of a home improves its value by approximately 9500,if the other features of a house are held constant.
 This shows that renovated houses have better sale prices on average.
 
-Objective 1:
-Explore the Relationship Between Property Size and Housing Prices Conclusion:
-
-Findings:  The analysis reveals a strong positive correlation (r = 0.701917) between sqft_living (measured by footage of a house) and housing prices (price). Larger houses in terms of sqft_living tend to command higher prices. 
-
-Implications: This correlation suggests that property size significantly influences housing prices, guiding decisions for real estate investors and homebuyers regarding property valuation and market positioning.
-
-Findings:  The analysis reveals a strong positive correlation (r = 0.695) between property size (measured by average number of rooms, RM) and housing prices (MEDV). Larger properties tend to command higher prices in the Boston housing market.
-
-Implications: This correlation suggests that property size significantly influences housing prices, guiding decisions for real estate investors and homebuyers regarding property valuation and market position
-
-
-Objective 2:
-Develop a Linear Regression Model to Predict Housing Prices Conclusion:
-
-Findings: The linear regression model, incorporating features bedrooms,bathrooms,sqft_living,grade,condition,sqft_lot,floors,waterfront,yr_built achieves an R-squared (R2) score of 0.51 on the test set. This indicates that 51% of the variance in housing prices (price) can be explained by these predictors.
-
-Implications: Stakeholders can utilize this model for predicting housing prices based on property characteristics. It supports informed decision-making in real estate investments, pricing strategies, and urban development planning.
-
 ## Conclusion:
 
 The objectives of this project were successfully met:
