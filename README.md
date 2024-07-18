@@ -106,7 +106,7 @@ sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 ![image](https://github.com/user-attachments/assets/81bb2769-2e2e-4db9-bcac-055687f9e34a)
 
 
-### Visualizing the correlation using a heatmap
+#### Visualizing the correlation using a heatmap
 ![image](https://github.com/user-attachments/assets/8ed535ac-e0ad-43eb-aa54-95641be8b5b9)
 
 #### Checking the correlation between the independent variables to the price(our target variable)
@@ -131,8 +131,6 @@ Priority features are those that have a strong correlation with the price
 ## Model Creation, Evaluation and Validation
 ### Model 1. Analysis 1
 #### A Simple Linear Regression Model
-
-Simple Linear Regression Formula
 
 The feature used for this model is 'sqft_living' and the predictor variable, 'price'
 
@@ -171,6 +169,7 @@ To improve the performance of our model, we shall add other key features in our 
 #### Multiple Linear Regression Model
 
 Using the top 5 features i.e 'sqft_living', 'grade', 'bathrooms', 'bedrooms', 'floors'
+
 The formula for predicting the price (y) can be expressed as:
 
 y = β0 + β1 * sqft_living + β2 * grade + β3 * bathrooms + β4 * bedrooms + β5 * floors
@@ -225,6 +224,7 @@ Explanation:
 Intercept (-722928.66): This is the estimated price when all the predictors are zero. It provides a baseline price of a house without considering these features.
 
 #### Advantages of This Model:
+
 Higher R² Value: With an R² value of 0.56, this model explains a significant portion of the variance in house prices, making it more reliable than the previous models.
 
 Lower Errors: Both the MSE and MAE are lower in this model compared to previous ones, indicating more accurate and reliable predictions.
@@ -233,10 +233,9 @@ Comprehensive Features: By including multiple relevant features, this model prov
 
 In summary, this final multiple linear regression model offers improved predictive accuracy and reliability by incorporating a broader range of features. This makes it a valuable tool for predicting house prices and making informed real estate decisions.
 
+## Analysis Based Recommendations
 
-## Recommendations Based On Analysis
-
-### Relationship Between Analysis and Property Value
+#### Relationship Between Analysis and Property Value
 
 Determining whether renovations affect home prices and to what extent.
 
@@ -247,22 +246,21 @@ Comparing using measures of central tendency
 Statistical Comparison
 
 Houses with Renovations:
-
 Mean Price: $570,982.51
 Mode Price: $550,000.00
-Houses without Renovations:
 
+Houses without Renovations:
 Mean Price: $462,107.18
 Mode Price: $350,000.00
-Differences:
 
+Differences:
 Mean Price Difference: $108,875.33
 Mode Price Difference: $200,000.00
 
 
 Houses that have undergone renovations have a higher mean price by approximately $110,000 and a higher mode price by $200,000 compared to houses without renovations. This indicates that, on average, renovated houses sell for higher prices. However, this comparison does not account for other differences between the houses.
 
-## Tailored Recommendations
+### Tailored Recommendations
 Based on the findings from our predictive model and statistical analysis, we can offer the following tailored recommendations to homeowners:
 
 #### Recommendations for Homeowners Willing to Sell
