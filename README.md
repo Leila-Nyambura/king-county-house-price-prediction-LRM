@@ -128,7 +128,7 @@ We decided to use all features (except those we initially dropped). Then tested 
 
 Priority features are those that have a strong correlation with the price
 
-## Model Creation, Evaluation and Validations
+## Model Creation, Evaluation and Validation
 ### Model 1. Analysis 1
 #### A Simple Linear Regression Model
 
@@ -244,6 +244,50 @@ Comparing using measures of central tendency
 
 ![image](https://github.com/user-attachments/assets/ecd2b2f5-734b-46de-b6c7-bdfb3cc3fcff)
 
+Statistical Comparison
+
+Houses with Renovations:
+
+Mean Price: $570,982.51
+Mode Price: $550,000.00
+Houses without Renovations:
+
+Mean Price: $462,107.18
+Mode Price: $350,000.00
+Differences:
+
+Mean Price Difference: $108,875.33
+Mode Price Difference: $200,000.00
+
+
+Houses that have undergone renovations have a higher mean price by approximately $110,000 and a higher mode price by $200,000 compared to houses without renovations. This indicates that, on average, renovated houses sell for higher prices. However, this comparison does not account for other differences between the houses.
+
+Analysis 3: Tailored Recommendations
+Based on the findings from our predictive model and statistical analysis, we can offer the following tailored recommendations to homeowners:
+
+Recommendations for Homeowners Willing to Sell
+Homeowners planning to sell their houses should consider undertaking renovations, particularly if the cost of these renovations does not exceed $7,500. Our analysis indicates that renovations can increase the value of a home by approximately $7,500. Therefore, if the renovation costs are kept within this limit, homeowners are likely to see a positive return on investment.
+
+Recommendations for Homeowners Looking to Enhance Property Value
+
+For homeowners not immediately looking to sell but aiming to enhance their property value for the future, strategic renovations can be beneficial. The key features to focus on, based on our model, include:
+
+Square Footage (sqft_living): Increasing the living area can significantly impact the home value.
+
+Grade: Improving the overall quality and finish of the house.
+
+Bathrooms: Adding or upgrading bathrooms can add substantial value.
+
+Condition: Ensuring the house is well-maintained and in good condition.
+
+General Advice
+
+Cost-Benefit Analysis: Homeowners should conduct a cost-benefit analysis before undertaking renovations. The predicted increase in home value should justify the renovation costs.
+
+Market Conditions: Homeowners should also consider the current market conditions and trends in their specific area. Consulting with real estate professionals can provide additional insights.
+
+These tailored recommendations aim to help homeowners make informed decisions that maximize their property value and ensure a positive return on their renovation investments.
+
 #### Explanation
 In order to bring out their differences clearly, we shall compare the formula of predicting the value with and without renovations
 
@@ -255,7 +299,6 @@ We can therefore conclude that renovations impact the valuation of a home positi
 According to our predictive model, renovation of a home improves its value by approximately 9500,if the other features of a house are held constant.
 This shows that renovated houses have better sale prices on average.
 
-## Conclusions
 Objective 1:
 Explore the Relationship Between Property Size and Housing Prices Conclusion:
 
@@ -275,11 +318,17 @@ Findings: The linear regression model, incorporating features bedrooms,bathrooms
 
 Implications: Stakeholders can utilize this model for predicting housing prices based on property characteristics. It supports informed decision-making in real estate investments, pricing strategies, and urban development planning.
 
-Conclusion:
+## Conclusion:
 
-Findings: The analysis reveals a strong positive correlation (r = 0.695) between property size (measured by average number of rooms, RM) and housing prices (MEDV). Larger properties tend to command higher prices in the Boston housing market.
+The objectives of this project were successfully met:
 
-Implications: This correlation suggests that property size significantly influences housing prices, guiding decisions for real estate investors and homebuyers regarding property valuation and market position
+Accurate Prediction Model: We developed a multiple linear regression model that accurately predicts the value of a house based on its features. The model incorporates key predictors such as square footage, grade, number of bathrooms, number of bedrooms, number of floors, presence of waterfront, renovation status, lot size, condition, and age of the house, providing a comprehensive tool for home valuation.
+
+Quantified Renovation Impact: We explored and quantified the relationship between renovations and property value. Our analysis shows that renovated houses have higher mean and mode prices compared to non-renovated houses. Additionally, our predictive model indicates that renovations contribute to an increase in home value by approximately $7,500, highlighting the financial benefits of investing in renovations.
+
+Tailored Recommendations: Based on our findings, we can offer tailored recommendations to homeowners. Homeowners can be provided with accurate property valuations and advised on effective renovations to enhance their property value. This ensures that renovation decisions are informed and strategic, leading to better financial outcomes.
+
+Overall, this project has provided valuable insights into home valuation and the impact of renovations. By leveraging data on homes in King County, we have developed a reliable predictive model and quantified the benefits of renovations, supporting homeowners and stakeholders in making informed decisions in the real estate market. This model can serve as a useful tool for real estate agencies, homeowners, and urban developers, guiding strategic investments and enhancing property values.
 
 
 
