@@ -322,11 +322,17 @@ Implications: Stakeholders can utilize this model for predicting housing prices 
 
 The objectives of this project were successfully met:
 
-Accurate Prediction Model: We developed a multiple linear regression model that accurately predicts the value of a house based on its features. The model incorporates key predictors such as square footage, grade, number of bathrooms, number of bedrooms, number of floors, presence of waterfront, renovation status, lot size, condition, and age of the house, providing a comprehensive tool for home valuation.
+Accurate Prediction Model:
 
-Quantified Renovation Impact: We explored and quantified the relationship between renovations and property value. Our analysis shows that renovated houses have higher mean and mode prices compared to non-renovated houses. Additionally, our predictive model indicates that renovations contribute to an increase in home value by approximately $7,500, highlighting the financial benefits of investing in renovations.
+We developed a multiple linear regression model that accurately predicts the value of a house based on its features. The model incorporates key predictors such as square footage, grade, number of bathrooms, number of bedrooms, number of floors, presence of waterfront, renovation status, lot size, condition, and age of the house, providing a comprehensive tool for home valuation.
 
-Tailored Recommendations: Based on our findings, we can offer tailored recommendations to homeowners. Homeowners can be provided with accurate property valuations and advised on effective renovations to enhance their property value. This ensures that renovation decisions are informed and strategic, leading to better financial outcomes.
+Quantified Renovation Impact:
+
+We explored and quantified the relationship between renovations and property value. Our analysis shows that renovated houses have higher mean and mode prices compared to non-renovated houses. Additionally, our predictive model indicates that renovations contribute to an increase in home value by approximately $7,500, highlighting the financial benefits of investing in renovations.
+
+Tailored Recommendations: 
+
+Based on our findings, we can offer tailored recommendations to homeowners. Homeowners can be provided with accurate property valuations and advised on effective renovations to enhance their property value. This ensures that renovation decisions are informed and strategic, leading to better financial outcomes.
 
 Overall, this project has provided valuable insights into home valuation and the impact of renovations. By leveraging data on homes in King County, we have developed a reliable predictive model and quantified the benefits of renovations, supporting homeowners and stakeholders in making informed decisions in the real estate market. This model can serve as a useful tool for real estate agencies, homeowners, and urban developers, guiding strategic investments and enhancing property values.
 
