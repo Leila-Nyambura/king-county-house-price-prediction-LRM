@@ -33,7 +33,8 @@ Homeowners and real estate agents often face the challenge of accurately predict
    be a worthwhile investment if they intend to sell.
 
 ## Data Understanding
-
+Read the data stored in kc_house_data.csv using pandas
+Then accesses columns in our dataset using df.columns
 #### Column Names and Descriptions for Kings County Data Set
 id - unique identifier for the house
 
@@ -77,6 +78,8 @@ sqft_living15 - The square footage of interior housing living space for the near
 
 sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 
+## EDA & DATA CLEANING
+Here we drop irrelevant columns.
 ### Columns dropped:
 - date
 - view
@@ -88,241 +91,263 @@ sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 - long
 - sqft_living15
 - sqft_lot15
-
-## Data Analysis and Visualizations
-
-#### Checking how the size of the house compares to its price
-
-![image](https://github.com/user-attachments/assets/749d3795-6498-4cf9-baa0-110a9655d494)
-
-
-#### Impact of the quality of construction and design of a house(grade) on the price of the house
-![image](https://github.com/user-attachments/assets/4c98a8ec-8fd8-407c-8b60-759a517078c8)
+Then check for null values using df.isna().sum().Fill nans with zeros, the assumption being that they have no water fronts and/or they have not been renovated, This because the percentage of nans for yr_renovated is almost  a significant 20% and may affect our analysis if we drop
+next we convert waterfront and yr_renovated to boolean values, and give them suitable names
 
 ## Feature Selection
 
 #### Visualizing the dataset using a pairplot to explore correlations and distributions
+use sns.pairplot
+![alt text](image.png)
 
-![image](https://github.com/user-attachments/assets/81bb2769-2e2e-4db9-bcac-055687f9e34a)
-
-
-#### Visualizing the correlation using a heatmap
-![image](https://github.com/user-attachments/assets/8ed535ac-e0ad-43eb-aa54-95641be8b5b9)
+Visualizing the correlation using a heatmap
+![alt text](image-1.png)
 
 #### Checking the correlation between the independent variables to the price(our target variable)
-
-![image](https://github.com/user-attachments/assets/837621c0-c93c-4c8c-b191-635a2bb51a8d)
-
-![image](https://github.com/user-attachments/assets/b0667df3-7e19-434c-8c6a-b00296159980)
+Checked how diifferent independent variables relate to price
+- The correlation between price and bedrooms has a coefficient of 0.309453, indicating a moderate positive relationship. As the number of bedrooms increases, the price of the house tends to increase, but the relationship is not very strong.
+- The correlation between price and bathrooms has a coefficient of 0.526229, indicating a moderate to strong positive relationship. More bathrooms are associated with higher house prices.
+- The correlation between price and Sqft_living has a coefficient of 0.701875, indicating a strong positive relationship. Houses with larger living areas (square footage) tend to be more expensive.
+- The correlation between price and sqft_lot has a coefficient of 0.089111, indicating a very weak positive relationship. The size of the lot has little impact on the house price.
+- The correlation between price and floors has a coefficient of 0.256286, indicating a weak to moderate positive relationship. More floors are somewhat associated with higher house prices.
+- The correlation between price and waterfront has a coefficient of 0.264898, indicating a weak to moderate positive relationship. Houses located on the waterfront tend to be more expensive.
+- The correlation between price and condition has a coefficient of 0.034779, indicating an almost negligible positive relationship. The condition of the house has little to no impact on the price.
+- The correlation between price and grade has a coefficient of 0.668020, indicating a strong positive relationship. Higher-grade houses (quality of construction and design) tend to be more expensive.
+- The correlation between price and is_renovated has a coefficient of 0.118179, indicating a very weak positive relationship. The year the house was built has little impact on the house price.
+- The correlation between price and age has a coefficient of 	-0.052906	, indicating a very weak negative relationship. The year the house was built has little impact on the house price.
 
 #### Checking for Outliers
-![image](https://github.com/user-attachments/assets/9c22c28d-bb2c-40d8-bf77-a928d44338b8)
+![alt text](image-2.png)
+from this boxplot, outliers are present in every column apart from the age, and floors column.
+We will then drop all rows with outliers 
 
+### We shall test the above features practically to create the most accurate model, leveraging on the information from the correlation matrix. Priority features will be those that have a strong correlation with the price
 
-Features Used: 'price', 'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors',
-       'has_waterfront', 'condition', 'grade', 'is_renovated', 'age'
+## Analysis 1: Linear Regression Model for Prediction of Housing Prices
+##### Investigation of the most important features in homes to create an accurate model for estimating home value.
+##### From the correlation matrix above: 
+##### Top Predictors - sqft_living,grade,  bathrooms, bedrooms, has_waterfront,floors,is_renovated, sqft_lot,age,condition
+#### A.Simple Linear Regression Model
 
+- First, we shall create a model with the top predictor,sqft_living,  and progressively add other predictors while evaluating the performance of our model
 
-We decided to use all features (except those we initially dropped). Then tested the features practically to create the most accurate model, leveraging on the information from the correlation matrix. 
+##### Simple Linear Regression Formula
 
-
-Priority features are those that have a strong correlation with the price
-
-## Model Creation, Evaluation and Validation
-### Model 1. Analysis 1
-#### A Simple Linear Regression Model
-
-The feature used for this model is 'sqft_living' and the predictor variable, 'price'
-
-The formula for predicting the price (y) can be expressed as: y = β0 + β1 * sqft_living 
-
+The formula for predicting the price (y) can be expressed as:
+y = β0 + β1 * sqft_living
 Where:
-β0 is the intercept
-β1 is the coefficient for sqft_living
+
+- β0 is the intercept
+- β1 is the coefficient for sqft_living
+
 Placing the values of the intercept and coefficient, the formula can be expressed as:
 
-y = 158956.01 + 158.97582529 * sqft_living
 
+y = **142832.5535907722** + **169.5873353** * sqft_living
 
-Mean Squared Error: 26997058887.541637
+#### Explanation:
+- **Intercept (142832.55)**: This is the estimated price when the square footage of the living space is zero. It serves as the baseline price of a house without considering its size.
+- **Coefficient (169.59)**: This represents the increase in price for each additional square foot of living space. For every extra square foot, the price is predicted to increase by approximately 169.59 dollars.
 
-Mean Absolute Error: 132831.78109333402
-
-R Squared: 0.35426536920193596
-
-
-Explanation:
-
-Intercept (142832.55): This is the estimated price when the square footage of the living space is zero. It serves as the baseline price of a house without considering its size.
-
-Coefficient (169.59): This represents the increase in price for each additional square foot of living space. For every extra square foot, the price is predicted to increase by approximately 169.59 units of currency.
-
-Performance Interpretation:
+#### Performance Interpretation:
+- The **MSE** value of 26,997,058,887.54 indicates that there is a significant average squared error between the actual and predicted prices. This suggests that there is room for improvement in the model.
+- The **MAE** value of 132,831.78 tells us that, on average, our model's predictions are off by about 132,831.78 dollars.
+- The **R² value** of 0.35 means that 35% of the variability in house prices is accounted for by the model based on square footage alone. This indicates a moderate level of explanatory power, but it also suggests that other factors not included in this model are influencing house prices.
 
 In summary, while this simple linear regression model provides a basic understanding of how house prices vary with the size of the living area, its performance metrics indicate that it may not be sufficiently accurate for precise predictions. Including additional features could potentially improve the model's accuracy.
 
+#### B.Multiple Linear Regression Model
+- To improve the performance of our model, we shall add other key features in our simple model and evaluate its performance.
+- We shall then create an additional model with the auxiliary features which do not have a very high correlation with the price and evaluate to verifyif our model improves
+- The most accurate model across the metrics of errors and Rsquared will be chosen
 
-### Model 2. Analysis 2
+Using 2 different sets of predictor variables and come up whith 2 different models.
+sqft_living,grade,  bathrooms, bedrooms, has_waterfront,floors,is_renovated, sqft_lot,age,condition
 
-To improve the performance of our model, we shall add other key features in our simple model and evaluate its performance
-
-#### Multiple Linear Regression Model
-
-Using the top 5 features i.e 'sqft_living', 'grade', 'bathrooms', 'bedrooms', 'floors'
-
+##### Multiple Linear Regression Formula
 The formula for predicting the price (y) can be expressed as:
 
-y = β0 + β1 * sqft_living + β2 * grade + β3 * bathrooms + β4 * bedrooms + β5 * floors
+**y** = **β0** + **β1** * sqft_living + **β2** * grade + **β3** * bathrooms + **β4** * bedrooms + **β5** * floors
 
 Where:
 
-β0 is the intercept
-β1, β2, ..., β5 are the coefficients for each feature
+- **β0** is the intercept
+- **β1, β2, ..., β5** are the coefficients for each feature
+
 Placing the values of the intercept and coefficients, the formula can be expressed as:
 
-y = -271416.9668649424 + 118.81604097 * sqft_living + 80470.38579525 * grade + -18220.19031844 * bathrooms + -12892.82031154 * bedrooms + -7053.33250738 * floors
-
-Mean Squared Error of Model:  23757545024.29692
-Mean Absolute Error of Model: 122306.04934670829
-R Squared Value of Model: 0.43175033884849523
-
-Explanation:
-
-Intercept (-271416.97): This is the estimated price when all the predictors (sqft_living, grade, bathrooms, bedrooms, floors) are zero. It serves as the baseline price of a house without considering these features.
-
-Performance Interpretation:
-
-In summary, this multiple linear regression model provides a more comprehensive understanding of how various features influence house prices compared to the simple linear regression model. However, the performance metrics indicate that there is still room for improvement, and incorporating additional relevant features might further enhance the model's accuracy
-
-
-
-### Model 3. Analysis 3
-
-#### Multiple Linear Regression Model
-
-Using all features
-The formula for predicting the price (y) can be expressed as:
-
-y = β0 + β1 * sqft_living + β2 * grade + β3 * bathrooms + β4 * bedrooms + β5 * floors + β6 * has_waterfront + β7 * is_renovated + β8 * sqft_lot + β9 * condition + β10 * age
+**y** = **-271416.9668649424** + **118.81604097** * sqft_living + **80470.38579525** * grade + **-18220.19031844** * bathrooms + **-12892.82031154** * bedrooms + **-7053.33250738** * floors
 
 Where:
 
-β0 is the intercept
-β1, β2, ..., β10 are the coefficients for each feature
+- **-271416.9668649424** is the intercept
+- **118.81604097** is the coefficient for sqft_living
+- **80470.38579525** is the coefficient for grade
+- **-18220.19031844** is the coefficient for bathrooms
+- **-12892.82031154** is the coefficient for bedrooms
+- **-7053.33250738** is the coefficient for floors
+
+#### Explanation:
+- **Intercept (-271416.97)**: This is the estimated price when all the predictors (sqft_living, grade, bathrooms, bedrooms, floors) are zero. It serves as the baseline price of a house without considering these features.
+- **Coefficients**:
+  - **118.82 for sqft_living**: For each additional square foot of living space, the price is predicted to increase by approximately 118.82 dollars.
+  - **80470.39 for grade**: For each unit increase in grade, the price is predicted to increase by approximately 80470.39 dollars.
+  - **-18220.19 for bathrooms**: For each additional bathroom, the price is predicted to decrease by approximately 18220.19 dollars.
+  - **-12892.82 for bedrooms**: For each additional bedroom, the price is predicted to decrease by approximately 12892.82 dollars.
+  - **-7053.33 for floors**: For each additional floor, the price is predicted to decrease by approximately 7053.33 dollars.
+
+#### Performance Interpretation:
+- The **MSE** value of 23,757,545,024.30 indicates a significant average squared error between the actual and predicted prices, though it is slightly lower than the simple linear regression model, suggesting a better fit.
+- The **MAE** value of 122,306.05 tells us that, on average, our model's predictions are off by about 122,306.05 dollars.
+- The **R² value** of 0.43 means that 43% of the variability in house prices is accounted for by the model based on the features included. This indicates an improvement over the simple linear regression model and suggests that including multiple features provides a better explanation of house prices.
+
+In summary, this multiple linear regression model provides a more comprehensive understanding of how various features influence house prices compared to the simple linear regression model. However, the performance metrics indicate that there is still room for improvement, and incorporating additional relevant features might further enhance the model's accuracy.
+
+##### II. Model 3( Multiple linear regression model with all predictors)
+##### Multiple Linear Regression Formula
+
+The formula for predicting the price (y) can be expressed as:
+
+**y** = **β0** + **β1** * sqft_living + **β2** * grade + **β3** * bathrooms + **β4** * bedrooms + **β5** * floors + **β6** * has_waterfront + **β7** * is_renovated + **β8** * sqft_lot + **β9** * condition + **β10** * age 
+
+Where:
+
+- **β0** is the intercept
+- **β1, β2, ..., β10** are the coefficients for each feature
+
 Placing the values of the intercept and coefficients, the formula can be expressed as:
 
-y = -722928.656182566 + 110.32036 * sqft_living + 105666.687 * grade + 25011.2847 * bathrooms + -15618.9331 * bedrooms + 16338.1883 * floors + 278527.067 * has_waterfront + 7347.24504 * is_renovated + -7.35820112 * sqft_lot + 21879.1947 * condition + 2690.50331 * age
+**y** = **-722928.656182566** + **110.32036** * sqft_living + **105666.687** * grade + **25011.2847** * bathrooms + **-15618.9331** * bedrooms + **16338.1883** * floors + **278527.067** * has_waterfront + **7347.24504** * is_renovated + **-7.35820112** * sqft_lot + **21879.1947** * condition + **2690.50331** * age
 
-Mean Squared Error of Model:  18203549025.413246
+Where:
 
-Mean Absolute Error of Model: 105665.88359227464
-
-R Squared Value of Model: 0.5645947190727462
-
-Explanation:
-
-Intercept (-722928.66): This is the estimated price when all the predictors are zero. It provides a baseline price of a house without considering these features.
+- **-722928.656182566** is the intercept
+- **110.32036** is the coefficient for sqft_living
+- **105666.687** is the coefficient for grade
+- **25011.2847** is the coefficient for bathrooms
+- **-15618.9331** is the coefficient for bedrooms
+- **16338.1883** is the coefficient for floors
+- **278527.067** is the coefficient for has_waterfront
+- **7347.24504** is the coefficient for is_renovated
+- **-7.35820112** is the coefficient for sqft_lot
+- **21879.1947** is the coefficient for condition
+- **2690.50331** is the coefficient for age
+#### Explanation:
+- **Intercept (-722928.66)**: This is the estimated price when all the predictors are zero. It provides a baseline price of a house without considering these features.
+- **Coefficients**:
+  - **110.32 for sqft_living**: For each additional square foot of living space, the price is predicted to increase by approximately 110.32 dollars.
+  - **105666.69 for grade**: For each unit increase in grade, the price is predicted to increase by approximately 105666.69 dollars.
+  - **25011.28 for bathrooms**: For each additional bathroom, the price is predicted to increase by approximately 25011.28 dollars.
+  - **-15618.93 for bedrooms**: For each additional bedroom, the price is predicted to decrease by approximately 15618.93 dollars.
+  - **16338.19 for floors**: For each additional floor, the price is predicted to increase by approximately 16338.19 dollars.
+  - **278527.07 for has_waterfront**: Properties with waterfronts are predicted to be valued higher by approximately 278527.07 dollars.
+  - **7347.25 for is_renovated**: Renovated properties are predicted to be valued higher by approximately 7347.25 dollars.
+  - **-7.36 for sqft_lot**: Each additional square foot of lot size is predicted to decrease the price by approximately 7.36 dollars.
+  - **21879.19 for condition**: For each unit increase in condition rating, the price is predicted to increase by approximately 21879.19 dollars.
+  - **2690.50 for age**: For each year increase in the age of the property, the price is predicted to increase by approximately 2690.50 dollars.
 
 #### Advantages of This Model:
-
-Higher R² Value: With an R² value of 0.56, this model explains a significant portion of the variance in house prices, making it more reliable than the previous models.
-
-Lower Errors: Both the MSE and MAE are lower in this model compared to previous ones, indicating more accurate and reliable predictions.
-
-Comprehensive Features: By including multiple relevant features, this model provides a more detailed and nuanced understanding of how different factors affect house prices, leading to better-informed decisions for stakeholders.
+- **Higher R² Value**: With an R² value of 0.56, this model explains a significant portion of the variance in house prices, making it more reliable than the previous models.
+- **Lower Errors**: Both the MSE and MAE are lower in this model compared to previous ones, indicating more accurate and reliable predictions.
+- **Comprehensive Features**: By including multiple relevant features, this model provides a more detailed and nuanced understanding of how different factors affect house prices, leading to better-informed decisions for stakeholders.
 
 In summary, this final multiple linear regression model offers improved predictive accuracy and reliability by incorporating a broader range of features. This makes it a valuable tool for predicting house prices and making informed real estate decisions.
 
-## Analysis Based Recommendations
+## Analysis 2: Relationship between renovations and property value
+In this analysis, we aim to determine whether renovations affect home prices and, if so, to what extent.
+First and foremost, inspecting the scatter plot of the 2 variables
+![alt text](image-3.png)
+This does not show the relationship clearly. Comparing the measures of central tendency
 
-#### Relationship Between Analysis and Property Value
+### Statistical Comparison
 
-Determining whether renovations affect home prices and to what extent.
+**Houses with Renovations:**
+- Mean Price: \$570,982.51
+- Mode Price: \$550,000.00
 
-Comparing using measures of central tendency
+**Houses without Renovations:**
+- Mean Price: \$462,107.18
+- Mode Price: \$350,000.00
 
-![image](https://github.com/user-attachments/assets/ecd2b2f5-734b-46de-b6c7-bdfb3cc3fcff)
+**Differences:**
+- Mean Price Difference: \$108,875.33
+- Mode Price Difference: \$200,000.00
 
-Statistical Comparison
+As shown above, houses that have undergone renovations have a higher mean price by approximately  **$110,000** and a higher mode price by **$200,000** compared to houses without renovations. This indicates that, on average, renovated houses sell for higher prices. However, this comparison does not account for other differences between the houses.
 
-Houses with Renovations:
-Mean Price: $570,982.51
-Mode Price: $550,000.00
+### Predictive Model Analysis
 
-Houses without Renovations:
-Mean Price: $462,107.18
-Mode Price: $350,000.00
+To further understand the impact of renovations on home prices, we use our predictive model:
 
-Differences:
-Mean Price Difference: $108,875.33
-Mode Price Difference: $200,000.00
+**y** = **-722928.656182566** + **110.32036** * sqft_living + **105666.687** * grade + **25011.2847** * bathrooms + **-15618.9331** * bedrooms + **16338.1883** * floors + **278527.067** * has_waterfront + **7347.24504** * is_renovated + **-7.35820112** * sqft_lot + **21879.1947** * condition + **2690.50331** * age
 
+Here, the coefficient for `is_renovated` is 7,347.25, indicating that renovations are predicted to increase the value of a home by approximately \$7,500.
 
-Houses that have undergone renovations have a higher mean price by approximately $110,000 and a higher mode price by $200,000 compared to houses without renovations. This indicates that, on average, renovated houses sell for higher prices. However, this comparison does not account for other differences between the houses.
+### Conclusion
 
-### Tailored Recommendations
+Based on our analysis and predictive model, we can conclude that renovations positively impact the valuation of a home. Renovated properties not only have higher mean and mode prices but are also predicted to be valued higher by approximately \$7,500 when other factors are held constant.
+
+## Analysis 3: Tailored Recommendations
+
 Based on the findings from our predictive model and statistical analysis, we can offer the following tailored recommendations to homeowners:
 
-#### Recommendations for Homeowners Willing to Sell
-Homeowners planning to sell their houses should consider undertaking renovations, particularly if the cost of these renovations does not exceed $7,500. Our analysis indicates that renovations can increase the value of a home by approximately $7,500. Therefore, if the renovation costs are kept within this limit, homeowners are likely to see a positive return on investment.
+### Recommendations for Homeowners Willing to Sell
 
-#### Recommendations for Homeowners Looking to Enhance Property Value
+Homeowners planning to sell their houses should consider undertaking renovations, particularly if the cost of these renovations does not exceed **$7,500**. Our analysis indicates that renovations can increase the value of a home by approximately **$7,500**. Therefore, if the renovation costs are kept within this limit, homeowners are likely to see a positive return on investment.
+
+### Recommendations for Homeowners Looking to Enhance Property Value
 
 For homeowners not immediately looking to sell but aiming to enhance their property value for the future, strategic renovations can be beneficial. The key features to focus on, based on our model, include:
 
-Square Footage (sqft_living): Increasing the living area can significantly impact the home value.
+- **Square Footage (sqft_living):** Increasing the living area can significantly impact the home value.
+- **Grade:** Improving the overall quality and finish of the house.
+- **Bathrooms:** Adding or upgrading bathrooms can add substantial value.
+- **Condition:** Ensuring the house is well-maintained and in good condition.
 
-Grade: Improving the overall quality and finish of the house.
+### General Advice
 
-Bathrooms: Adding or upgrading bathrooms can add substantial value.
-
-Condition: Ensuring the house is well-maintained and in good condition.
-
-#### General Advice
-
-Cost-Benefit Analysis: Homeowners should conduct a cost-benefit analysis before undertaking renovations. The predicted increase in home value should justify the renovation costs.
-
-Market Conditions: Homeowners should also consider the current market conditions and trends in their specific area. Consulting with real estate professionals can provide additional insights.
+- **Cost-Benefit Analysis:** Homeowners should conduct a cost-benefit analysis before undertaking renovations. The predicted increase in home value should justify the renovation costs.
+- **Market Conditions:** Homeowners should also consider the current market conditions and trends in their specific area. Consulting with real estate professionals can provide additional insights.
 
 These tailored recommendations aim to help homeowners make informed decisions that maximize their property value and ensure a positive return on their renovation investments.
 
-#### Explanation
-In order to bring out their differences clearly, we shall compare the formula of predicting the value with and without renovations
+## CONCLUSION & RECOMMENDATIONS
 
-From model 3 above the formula of the home price, y is: y = -749131.0488568435 + 113.872587 * sqft_living + 110635.642 * grade + 25545.2854 * bathrooms + -20906.265 * bedrooms + 15106.3867 * floors + 260503.41 * has_waterfront + 9452.40388 * is_renovated + -7.4194231 * sqft_lot + 20940.4675 * condition + 2763.58649 * age
-
-Thus it can be seen that 9452.40388 is the coefficient for is_renovated
-
-We can therefore conclude that renovations impact the valuation of a home positively.
-According to our predictive model, renovation of a home improves its value by approximately 9500,if the other features of a house are held constant.
-This shows that renovated houses have better sale prices on average.
-
-## Conclusion:
-
+### CONCLUSION
 The objectives of this project were successfully met:
 
-Accurate Prediction Model:
+1. **Accurate Prediction Model:** We developed a multiple linear regression model that accurately predicts the value of a house based on its features. The model incorporates key predictors such as square footage, grade, number of bathrooms, number of bedrooms, number of floors, presence of waterfront, renovation status, lot size, condition, and age of the house, providing a comprehensive tool for home valuation.
 
-We developed a multiple linear regression model that accurately predicts the value of a house based on its features. The model incorporates key predictors such as square footage, grade, number of bathrooms, number of bedrooms, number of floors, presence of waterfront, renovation status, lot size, condition, and age of the house, providing a comprehensive tool for home valuation.
+2. **Quantified Renovation Impact:** We explored and quantified the relationship between renovations and property value. Our analysis shows that renovated houses have higher mean and mode prices compared to non-renovated houses. Additionally, our predictive model indicates that renovations contribute to an increase in home value by approximately \$7,500, highlighting the financial benefits of investing in renovations.
 
-Quantified Renovation Impact:
-
-We explored and quantified the relationship between renovations and property value. Our analysis shows that renovated houses have higher mean and mode prices compared to non-renovated houses. Additionally, our predictive model indicates that renovations contribute to an increase in home value by approximately $7,500, highlighting the financial benefits of investing in renovations.
-
-
-Based on our findings, we can offer tailored recommendations to homeowners. Homeowners can be provided with accurate property valuations and advised on effective renovations to enhance their property value. This ensures that renovation decisions are informed and strategic, leading to better financial outcomes.
+3. **Tailored Recommendations:** Based on our findings, we can offer tailored recommendations to homeowners. Homeowners can be provided with accurate property valuations and advised on effective renovations to enhance their property value. This ensures that renovation decisions are informed and strategic, leading to better financial outcomes.
 
 Overall, this project has provided valuable insights into home valuation and the impact of renovations. By leveraging data on homes in King County, we have developed a reliable predictive model and quantified the benefits of renovations, supporting homeowners and stakeholders in making informed decisions in the real estate market. This model can serve as a useful tool for real estate agencies, homeowners, and urban developers, guiding strategic investments and enhancing property values.
 
+### Recommendations
 
+Based on the findings of this project, we have developed several recommendations for homeowners, real estate agents, and urban developers to maximize property value and make informed decisions in the real estate market.
 
+#### 1. **For Homeowners**
 
+- **Invest in Renovations**: Given that renovations have been shown to increase home value by approximately $7,500, homeowners should consider investing in key renovation projects. Prioritize renovations that improve the kitchen, bathrooms, and overall aesthetics of the home, as these areas typically yield higher returns on investment.
+  
+- **Maximize Square Footage**: Since square footage is a significant predictor of home value, homeowners should explore options to increase the livable space in their homes. This can include finishing basements, converting attics, or adding extensions.
+  
+- **Enhance Home Grade and Condition**: Focus on improving the grade and condition of the home by upgrading materials, fixtures, and finishes. Regular maintenance and timely upgrades can prevent the home from deteriorating and ensure it remains attractive to potential buyers.
 
+#### 2. **For Real Estate Agents**
 
+- **Utilize Predictive Model for Pricing**: Leverage the predictive model developed in this project to provide accurate and data-driven property valuations. This can help in setting competitive listing prices and in negotiations with buyers and sellers.
+  
+- **Advise Clients on Strategic Renovations**: Use the insights from this project to advise clients on which renovations are likely to yield the highest returns. Guide them on cost-effective upgrades that can significantly enhance property value.
 
+- **Highlight Renovated Properties**: When marketing homes, emphasize the benefits of recent renovations. Highlighting the positive impact of renovations on home value can attract more potential buyers and justify higher asking prices.
 
+#### 3. **For Urban Developers**
 
+- **Focus on High-Value Features**: When planning new developments or refurbishing existing properties, prioritize features that have been shown to significantly impact home value, such as higher square footage, multiple bathrooms, and high-grade materials.
+  
+- **Waterfront Properties**: Given the premium associated with waterfront properties, developers should consider opportunities to develop or enhance properties with waterfront access. Ensure these properties are marketed effectively to highlight their unique selling points.
 
-
-
-
+- **Incorporate Modern, High-Quality Design**: Ensure that new developments meet high standards of design and construction. Modern, well-designed homes with high-quality finishes are more attractive to buyers and can command higher prices.
