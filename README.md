@@ -268,7 +268,7 @@ Based on the findings from our predictive model and statistical analysis, we can
 ### Recommendations for Homeowners Willing to Sell
 Homeowners planning to sell their houses should consider undertaking renovations, particularly if the cost of these renovations does not exceed $7,500. Our analysis indicates that renovations can increase the value of a home by approximately $7,500. Therefore, if the renovation costs are kept within this limit, homeowners are likely to see a positive return on investment.
 
-Recommendations for Homeowners Looking to Enhance Property Value
+#### Recommendations for Homeowners Looking to Enhance Property Value
 
 For homeowners not immediately looking to sell but aiming to enhance their property value for the future, strategic renovations can be beneficial. The key features to focus on, based on our model, include:
 
@@ -280,7 +280,7 @@ Bathrooms: Adding or upgrading bathrooms can add substantial value.
 
 Condition: Ensuring the house is well-maintained and in good condition.
 
-General Advice
+#### General Advice
 
 Cost-Benefit Analysis: Homeowners should conduct a cost-benefit analysis before undertaking renovations. The predicted increase in home value should justify the renovation costs.
 
