@@ -194,6 +194,27 @@ R Squared: 0.5119001571421757
 
 ## Recommendations Based On Analysis
 
+### Relationship Between Analysis and Property Value
+Determining whether renovations affect home prices and to what extent.
+
+Compapring using measures of central tendency
+![image](https://github.com/user-attachments/assets/ecd2b2f5-734b-46de-b6c7-bdfb3cc3fcff)
+
+#### Explanation
+In order to bring out their differences clearly, we shall compare the formula of predicting the value with and without renovations
+
+From model 3 above the formula of the home price, y is: y = -749131.0488568435 + 113.872587 * sqft_living + 110635.642 * grade + 25545.2854 * bathrooms + -20906.265 * bedrooms + 15106.3867 * floors + 260503.41 * has_waterfront + 9452.40388 * is_renovated + -7.4194231 * sqft_lot + 20940.4675 * condition + 2763.58649 * age
+
+Thus it can be seen that 9452.40388 is the coefficient for is_renovated
+
+We can therefore conclude that renovations impact the valuation of a home positively.
+According to our predictive model, renovation of a home improves its value by approximately 9500,if the other features of a house are held constant.
+This shows that renovated houses have better sale prices on average.
+
+## Conclusions
+
+
+
 
 
 
