@@ -98,9 +98,11 @@ next we convert waterfront and yr_renovated to boolean values, and give them sui
 
 #### Visualizing the dataset using a pairplot to explore correlations and distributions
 use sns.pairplot
+
 ![alt text](images/image.png)
 
 Visualizing the correlation using a heatmap
+
 ![alt text](images/image-1.png)
 
 #### Checking the correlation between the independent variables to the price(our target variable)
@@ -117,7 +119,9 @@ Checked how diifferent independent variables relate to price
 - The correlation between price and age has a coefficient of 	-0.052906	, indicating a very weak negative relationship. The year the house was built has little impact on the house price.
 
 #### Checking for Outliers
+
 ![alt text](images/image-2.png)
+
 from this boxplot, outliers are present in every column apart from the age, and floors column.
 We will then drop all rows with outliers 
 
@@ -256,7 +260,9 @@ In summary, this final multiple linear regression model offers improved predicti
 ## Analysis 2: Relationship between renovations and property value
 In this analysis, we aim to determine whether renovations affect home prices and, if so, to what extent.
 First and foremost, inspecting the scatter plot of the 2 variables
+
 ![alt text](images/image-3.png)
+
 This does not show the relationship clearly. Comparing the measures of central tendency
 
 ### Statistical Comparison
