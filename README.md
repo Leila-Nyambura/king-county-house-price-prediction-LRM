@@ -1,5 +1,3 @@
-# Project 2 (Group Work)
-
 # King County House Price Prediction using Linear Regression Model
 
 ## Project Overview
